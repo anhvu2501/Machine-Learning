@@ -31,7 +31,6 @@ clear ; close all; clc
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
 warmUpExercise()
-A = eye(5)
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
