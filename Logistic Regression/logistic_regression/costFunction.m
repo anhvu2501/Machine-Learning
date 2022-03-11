@@ -20,12 +20,11 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% Vectorized equation for logistic regression
+J = -1/m * (y' * log(sigmoid(X*theta)) + (1 - y)'*log(1 - sigmoid(X*theta)));
 
-
-
-
-
-
+% Vectorized equation for gradient descent of logistic regression
+grad = theta - 1/m * X' * (sigmoid(X*theta) - y);
 
 % =============================================================
 
