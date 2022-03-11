@@ -12,9 +12,15 @@ J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
+% predictions = X * theta;
+% sqrErrors = (predictions - y).^2;
+% J = 1/(2*m) * sum(sqrErrors);
+
+
+% Method 2: use vectorized equation
 predictions = X * theta;
-sqrErrors = (predictions - y).^2;
-J = 1/(2*m) * sum(sqrErrors);
+error = predictions - y;
+J = 1/(2*m) * error' * error;
 
 % =========================================================================
 
