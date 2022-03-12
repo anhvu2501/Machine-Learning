@@ -17,7 +17,14 @@ grad = zeros(size(theta));
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
+n = size(X, 2);
+[J, grad] = costFunction(theta, X, y);
+% Vectorized eq for cost function of regularized logistic regression
+J = J + lambda/(2*m) * sum(theta(2:n) .^ 2);
+% Vectorized eq for gradient descent of regularized logistic regression
+grad(2:n) = grad(2:n) + lambda/m * theta(2:n);
 
+% NOTE: Only take theta 1 to theta n
 
 
 

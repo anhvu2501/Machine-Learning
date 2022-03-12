@@ -24,8 +24,9 @@ grad = zeros(size(theta));
 J = -1/m * (y' * log(sigmoid(X*theta)) + (1 - y)'*log(1 - sigmoid(X*theta)));
 
 % Vectorized equation for gradient descent of logistic regression
-grad = theta - 1/m * X' * (sigmoid(X*theta) - y);
-
+% grad = theta - 1/m * X' * (sigmoid(X*theta) - y);
+% In this part, just need to set grad to the partial derivatives of the cost
+grad = 1/m * X' * (sigmoid(X*theta) - y);
 % =============================================================
 
 end
