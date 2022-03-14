@@ -51,7 +51,7 @@ X = [ones(m, 1) X];
 
 initial_theta = zeros(n + 1, 1);
 
-options = optimset('GradObj', 'on', 'MaxIter', 50);
+options = optimset('GradObj', 'on', 'MaxIter', 50); % iteration = 50 => run this algorithm 50 times (basically means will do gradient descent 50 times to find theta)
 for c = 1:num_labels,
   [theta] = fmincg(@(t)(lrCostFunction(t, X, (y==c), lambda)), initial_theta, options);
   all_theta(c, :) = theta';
