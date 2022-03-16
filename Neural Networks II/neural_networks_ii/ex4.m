@@ -68,7 +68,9 @@ nn_params = [Theta1(:) ; Theta2(:)];
 %  We suggest implementing the feedforward cost *without* regularization
 %  first so that it will be easier for you to debug. Later, in part 4, you
 %  will get to implement the regularized cost.
-%
+
+% Feedforward = Forward propagation
+
 fprintf('\nFeedforward Using Neural Network ...\n')
 
 % Weight regularization parameter (we set this to 0 here).
@@ -128,6 +130,7 @@ pause;
 
 fprintf('\nInitializing Neural Network Parameters ...\n')
 
+% random in dimension (input_layer_size x hidden_layer_size)
 initial_Theta1 = randInitializeWeights(input_layer_size, hidden_layer_size);
 initial_Theta2 = randInitializeWeights(hidden_layer_size, num_labels);
 
@@ -179,6 +182,8 @@ pause;
 %  advanced optimizers are able to train our cost functions efficiently as
 %  long as we provide them with the gradient computations.
 %
+
+% This part is for training examples. Specific explaination has already done in the previous assignment (one vs all classification and neural network i)
 fprintf('\nTraining Neural Network... \n')
 
 %  After you have completed the assignment, change the MaxIter to a larger

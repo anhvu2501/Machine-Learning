@@ -8,10 +8,13 @@ function checkNNGradients(lambda)
 %   result in very similar values.
 %
 
+
+% check regularization or not
 if ~exist('lambda', 'var') || isempty(lambda)
     lambda = 0;
 end
 
+% create a small neural network to check 
 input_layer_size = 3;
 hidden_layer_size = 5;
 num_labels = 3;
