@@ -125,6 +125,8 @@ end
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
+% => from the learning curve that already exported, we can see this learning algorithm is suffering high bias (underfitting)
+
 %% =========== Part 6: Feature Mapping for Polynomial Regression =============
 %  One solution to this is to use polynomial regression. You should now
 %  complete polyFeatures to map each example into its powers

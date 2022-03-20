@@ -53,10 +53,21 @@ error_val   = zeros(m, 1);
 
 % ---------------------- Sample Solution ----------------------
 
-
-
-
-
+for i = 1 : m,
+  % we calculate X and y subset to obtain different training set sizes
+  X_subset = X(1:i, :);
+  y_subset = y(1:i);
+  
+  theta = trainLinearReg(X_subset, y_subset,lambda);
+  
+  % these error equation does not include the regularization term.
+  % Calculate by using the linearRegCostFunction already implemented and set lambda = 0
+  % For training set error, compute it on the training subset (instead of the entire training set
+  % But for cross validation error, compute it on the entire cross validation set
+  error_train(i) = linearRegCostFunction(X_subset, y_subset, theta, 0);
+  error_val(i) = linearRegCostFunction(Xval, yval, theta, 0);
+  
+end
 
 
 % -------------------------------------------------------------
