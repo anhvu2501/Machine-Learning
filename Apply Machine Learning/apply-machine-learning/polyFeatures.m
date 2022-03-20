@@ -15,6 +15,8 @@ X_poly = zeros(numel(X), p);
 %
 % 
 
+% To create a polynomial features that X_poly(i, :) = [X(i) X(i).^2 X(i).^3 ...  X(i).^p];
+
 for i = 1 : numel(X),
   poly_feature = zeros(p, 1);
   
