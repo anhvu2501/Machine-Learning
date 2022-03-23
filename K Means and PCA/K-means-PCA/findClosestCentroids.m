@@ -21,11 +21,14 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
-
-
-
-
+for i = 1 : size(X, 1),
+  dist_arr = zeros(1, K);
+  for j = 1 : K,
+    dist_arr(1, j) = sqrt(sum(power((X(i,:) - centroids(j,:)),2)));
+  endfor
+  [~, min_idx] = min(dist_arr); % ~ symbol is used to discard the first output which is the min value of dist_arr
+  idx(i, 1) = min_idx;
+endfor
 
 % =============================================================
 
