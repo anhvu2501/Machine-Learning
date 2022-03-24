@@ -18,8 +18,11 @@ Z = zeros(size(X, 1), K);
 %                    projection_k = x' * U(:, k);
 %
 
-
-
+U_reduce = U(:, 1:K);
+% Vectorized equation of computation process of z
+% X (50x2) and U_reduce (2x1)
+% We need to get z as the result of PCA has the dimension (50x1)
+Z = X * U_reduce;
 
 % =============================================================
 

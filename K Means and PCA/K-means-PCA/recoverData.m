@@ -21,6 +21,11 @@ X_rec = zeros(size(Z, 1), size(U, 1));
 %               Notice that U(j, 1:K) is a row vector.
 %               
 
+U_reduce = U(:, 1:K);
+
+% Z(50x1), U_reduce(2x1) 
+% We need to recover X has the dimension 50 x 2 as original 
+X_rec = Z * U_reduce';
 
 
 % =============================================================
