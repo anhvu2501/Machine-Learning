@@ -26,13 +26,10 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-
-
-
-
-
-
-
+for i = 1 : K,
+  centroids (i, :) = mean(X(idx == i, :)); % short code to check in the training examples if each is assigned for which centroid.
+  % X(idx == i, :) will take all training examples that are assigned to centroid i.
+endfor
 % =============================================================
 
 

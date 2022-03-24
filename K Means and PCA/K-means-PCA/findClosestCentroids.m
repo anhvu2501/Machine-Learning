@@ -22,12 +22,12 @@ idx = zeros(size(X,1), 1);
 %
 
 for i = 1 : size(X, 1),
-  dist_arr = zeros(1, K);
+  dist_arr = zeros(1, K); % store distance of each training example to each centroid
   for j = 1 : K,
-    dist_arr(1, j) = sqrt(sum(power((X(i,:) - centroids(j,:)),2)));
+    dist_arr(1, j) = sqrt(sum(power((X(i,:) - centroids(j,:)),2))); % Euclidean distance
   endfor
   [~, min_idx] = min(dist_arr); % ~ symbol is used to discard the first output which is the min value of dist_arr
-  idx(i, 1) = min_idx;
+  idx(i, 1) = min_idx; % index of the centroid that is closest to training example i
 endfor
 
 % =============================================================

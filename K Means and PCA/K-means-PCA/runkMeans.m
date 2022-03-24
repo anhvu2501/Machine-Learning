@@ -11,7 +11,7 @@ function [centroids, idx] = runkMeans(X, initial_centroids, ...
 %   learning happens. This is set to false by default. runkMeans returns 
 %   centroids, a Kxn matrix of the computed centroids and idx, a m x 1 
 %   vector of centroid assignments (i.e. each entry in range [1..K])
-%
+%   idx stores the final index of each training example
 
 % Set default value for plot progress
 if ~exist('plot_progress', 'var') || isempty(plot_progress)
