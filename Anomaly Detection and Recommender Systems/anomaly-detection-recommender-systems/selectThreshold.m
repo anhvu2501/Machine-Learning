@@ -22,17 +22,20 @@ for epsilon = min(pval):stepsize:max(pval)
     %               
     % Note: You can use predictions = (pval < epsilon) to get a binary vector
     %       of 0's and 1's of the outlier predictions
-
-
-
-
-
-
-
-
-
-
-
+    
+    predictions = (pval < epsilon);
+    
+    % False Positive: the groud truth label says it's not an anomaly, but the algorithm incorrectly classified as an anomaly
+    fp = sum((predictions == 1) & (yval == 0)); 
+    % False Negative: the ground truth label says its an anomaly, but the algorithm incorrectly classified as not an anomaly
+    fn = sum((predictions == 0) & (yval == 1));
+    % True positive: the truth says it's an anomaly and the algorithm correctly classified as an anomaly
+    tp = sum((predictions == 1) & (yval == 1));
+    
+    precision = tp / (tp + fp);
+    recall = tp / (tp + fn);
+    
+    F1 = (2 * precision * recall) / (precision + recall);
 
 
     % =============================================================
